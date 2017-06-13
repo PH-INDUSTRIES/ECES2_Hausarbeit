@@ -1,0 +1,126 @@
+\documentclass[table]{beamer}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Set date of presentation
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+\day=14 \month=07 \year=2017
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Macro's needed for the template (do not change)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mode<presentation>
+{
+  \usepackage{beamerthemegscCD}
+}
+\RequirePackage{eces}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Packages 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Needed for the template
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+% Added by the user
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Definitions for the blocks and ToC
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{lightgray}{gray}{0.95}
+\setbeamertemplate{blocks}[rounded][shadow=true]
+\setbeamercolor{block title}{fg=white,bg=ceblue}
+\setbeamercolor{block body}{fg=black,bg=cehellgrau}
+\setbeamertemplate{sections/subsections in toc}[square]
+\setbeamerfont{section number projected}{series=\bfseries,size=\large}
+\setbeamercolor{section number projected}{bg=ceblue,fg=white}
+\setbeamercolor{subsection number projected}{bg=ceblue,fg=white}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title and Subtitle
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% usage:   \title[short title]{title}
+
+\title[]{ Titel \\
+\footnotesize\sf {Teammember 1, Teammember 2, Teammember 3}} 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Authors and Date and Subject
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% usage: \author[short author]{author1\and \author2}
+%
+% usage:   \date[short date]{date}
+%
+\author[Teammember 1 | Teammember 2 | Teammember 3 ]{Team}
+
+\date[]{\today}
+
+\subject{interne Bekanntmachung}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Set title page and table of contents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+
+\pgfdeclareimage[width=\paperwidth]{bg_title}{GSC-beamer-CD-title3}
+\AtBeginSection[]
+{
+\begin{frame}{Inhaltverzeichnis}
+\tableofcontents[currentsection,currentsubsection,subsectionstyle=show/show/hide]
+\end{frame}
+}
+\begin{document}
+
+\ecestitlepageintro{bg_title}
+\setbeamertemplate{footline}[ecesII]
+
+\setbeamertemplate{navigation symbols}[only frame symbol]
+
+\setbeamertemplate{sidebar right}[gsc theme]
+
+\setcounter{tocdepth}{1}
+%\begin{frame}{Inhaltsverzeichnis}
+%\tableofcontents
+%\end{frame}
+\begin{frame}{Inhaltsverzeichnis}
+\tableofcontents
+\end{frame}
+\setcounter{tocdepth}{2}
+
+\section{Section 1}
+\subsection{Subsection 1.1}
+	\begin{frame}
+	\frametitle{Title of frame}
+ 		Inhalt
+	\end{frame}	
+\section{Section 2}
+	\begin{frame}
+	\frametitle{Title of frame}
+	\begin{columns}[T]
+		\column{0.45\textwidth}
+			\begin{block}<2->{Block Titel}
+				\begin{itemize}
+					\item<3-> a
+					\item<3-> b
+					\item<3-> c
+				\end{itemize}
+			\end{block}
+		\column{0.45\textwidth}
+			\begin{block}<4->{}
+				\emph{Block ohne Titel}
+			\end{block}
+			\begin{block}<5->{Block Titel}
+				\begin{itemize}
+					\item a
+				\end{itemize}
+			\end{block}
+	\end{columns}
+	\end{frame}
+\end{document}
+
+
+
+
+
